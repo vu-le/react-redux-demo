@@ -1,25 +1,25 @@
 import {TODO} from '../constant';
 import Promise from 'bluebird';
 
-export function toDoAddRequest() {
+export function toDoRequest() {
     return {
         type: TODO.REQUEST
     }
 }
 
-export function toDoAddRecieve(data) {
+export function toDoRecieve(data) {
     return {
         type: TODO.RECIEVE,
         data: data
     }
 }
 
-export function getTodoList() {
+export function getTodo() {
     return (dispath) => {
-        dispath(toDoAddRequest());
+        dispath(toDoRequest());
         return new Promise(function (resolve, reject) {
             setTimeout(function () {
-                resolve(dispath(toDoAddRecieve([
+                resolve(dispath(toDoRecieve([
                     '起床',
                     '吃饭',
                     '睡觉'

@@ -18,6 +18,7 @@ export function getTodo() {
     return (dispath) => {
         dispath(toDoRequest());
         return new Promise(function (resolve, reject) {
+            //put async request here
             setTimeout(function () {
                 resolve(dispath(toDoRecieve([
                     '起床',

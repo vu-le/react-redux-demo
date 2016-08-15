@@ -12,7 +12,7 @@ config.plugins.push(new HtmlWebpackPlugin({
 }));
 config.plugins.push(new webpack.DefinePlugin({
         __PROD__: JSON.stringify(true),
-        'process.env.NODE_ENV':JSON.stringify('production')
+        // 'process.env.NODE_ENV':JSON.stringify('production')
     }));
 
 module.exports = config;

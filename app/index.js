@@ -11,22 +11,30 @@ import { Provider } from 'react-redux'
 
 import './style/style.scss'
 import reducers from './reducer';
-import ToDoContainer from './todo-container'
+import TodoContainer from './todo-container'
 
 let store;
 
-if (__PROD__) {
+if (!__PROD__) {
     store = createStore(reducers, applyMiddleware(
         thunkMiddleware,
         createLogger()
     ));
 }
-else{
-    store =  createStore(reducers, applyMiddleware(
+else {
+    store = createStore(reducers, applyMiddleware(
         thunkMiddleware
     ));
 }
 
+if (typeof console === 'undefined') {
+    window.console = {
+        log: () => { },
+        error: () => { },
+        warn: () => { }
+    }
+}
+
 ReactDOM.render(<Provider store={store}>
-    <ToDoContainer />
+    <TodoContainer />
 </Provider>, document.querySelector('#app'));

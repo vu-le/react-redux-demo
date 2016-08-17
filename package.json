@@ -31,7 +31,7 @@
         "webpack-dev-server": "^1.14.1"
     },
     "name": "webpack-react-redux-demo",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "main": "webpack.config.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",

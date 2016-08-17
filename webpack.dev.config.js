@@ -28,8 +28,19 @@ config.module.loaders.unshift({
 var compiler = webpack(config);
 var server = new WebpackDevServer(compiler, {
     hot: true,
-    publicPath: config.output.publicPath
+    publicPath: config.output.publicPath,
+    stats: {
+        colors: true,
+        chunks: false
+    }
 });
-server.listen(3000);
+server.listen(3000, function (err) {
+    if (err) {
+        console.log(err);
+        process.exit(1);
+        return;
+    }
+    console.log('Listening at http://localhost:3000')
+});
 
 module.exports = config;

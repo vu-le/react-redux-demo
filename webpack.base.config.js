@@ -6,7 +6,7 @@ var path = require('path');
 
 var config = {
     entry: {
-        app: ['./app/index.js'],
+        app: ['./app/index.js']
     },
     output: {
         filename: 'bundle.[hash].js',
@@ -21,7 +21,9 @@ var config = {
                 loader: 'babel',
                 exclude: /(node_modules|bower_components)/,
                 query: {
-                    presets: ['react', 'es2015'],
+                    presets: [
+                        'react', 'es2015'
+                    ],
                     plugins: ['transform-object-rest-spread']
                 }
             }, {

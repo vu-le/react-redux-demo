@@ -7,13 +7,11 @@ delete config.output.publicPath;
 !config.plugins && (config.plugins = []);
 config.plugins.push(new webpack.optimize.UglifyJsPlugin({
     compress: {
-        warn: false
+        warnings: false
     }
 }));
 config.plugins.push(new CleanWebpackPlugin(['dist', 'build']));
-config.plugins.push(new HtmlWebpackPlugin({
-    template: './template.html'
-}));
+config.plugins.push(new HtmlWebpackPlugin({template: './template.html'}));
 config.plugins.push(new webpack.DefinePlugin({
     __PROD__: JSON.stringify(true),
     // 'process.env.NODE_ENV':JSON.stringify('production')
